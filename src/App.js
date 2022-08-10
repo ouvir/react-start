@@ -21,7 +21,7 @@ function App() {
   }, []);
   return (
     <div>
-      <h1>The Coins! ({coins.length} Types)</h1>
+      <h1>The Coins! {loading ? "" : `(${coins.length} Types)`}</h1>
       {loading ? (
         <strong>Loading...</strong>
       ) : (
