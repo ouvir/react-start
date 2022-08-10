@@ -22,19 +22,24 @@ function App() {
   return (
     <div>
       <h1>The Coins! ({coins.length} Types)</h1>
-      {loading ? <strong>Loading...</strong> : null}
-      <select onChange={onSelect}>
-        {coins.map((coin) => (
-          <option key={coin.id}>
-            {coin.name}({coin.symbol}):$ {coin.quotes.USD.price} USD
-          </option>
-        ))}
-      </select>
-      <h2>How much money you have?</h2>
-      <input type="number" placeholder="$" onChange={onChange}></input>
-      <h3>
-        {select == null ? null : money / coins[select].quotes.USD.price} BTC{" "}
-      </h3>
+      {loading ? (
+        <strong>Loading...</strong>
+      ) : (
+        <div>
+          <select onChange={onSelect}>
+            {coins.map((coin) => (
+              <option key={coin.id}>
+                {coin.name}({coin.symbol}):$ {coin.quotes.USD.price} USD
+              </option>
+            ))}
+          </select>
+          <h2>How much money you have?</h2>
+          <input type="number" placeholder="$" onChange={onChange}></input>
+          <h3>
+            {select == null ? null : money / coins[select].quotes.USD.price} BTC{" "}
+          </h3>
+        </div>
+      )}
     </div>
   );
 }
