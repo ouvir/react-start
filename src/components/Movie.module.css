@@ -1,0 +1,20 @@
+.movie {
+  background-color: var(--main-color);
+  width: 600px;
+  height: 300px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: 5px 5px 15px;
+  border-radius: 1px;
+  margin: 100px 30px;
+  position: relative;
+}
+
+.movie__img {
+  width: 250px;
+  height: auto;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
