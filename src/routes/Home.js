@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Movie from "../components/Movie";
 import LoadingBox from "../components/Loading";
+import styles from "./Home.module.css";
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -18,11 +19,11 @@ function Home() {
     getMovies();
   }, []);
   return (
-    <div>
+    <div className={styles.contain}>
       {loading ? (
         <LoadingBox />
       ) : (
-        <div>
+        <div className={styles.main_screen}>
           {movies.map((movie) => (
             <Movie
               key={movie.id}

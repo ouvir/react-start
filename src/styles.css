@@ -1,2 +1,8 @@
 @import "reset.css";
 @import "variables.css";
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&display=swap");
+
+body {
+  font-family: "Aboreto", cursive;
+  font-weight: 900;
+}
