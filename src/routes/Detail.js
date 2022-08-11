@@ -17,7 +17,6 @@ function Detail() {
 
   useEffect(() => {
     getMovie();
-    console.log(movie);
   }, [getMovie]);
 
   return (
@@ -37,7 +36,7 @@ function Detail() {
           <ul>
             <h3>Genres</h3>
             {movie.genres.map((g) => (
-              <li>{g}</li>
+              <li key={g}>{g}</li>
             ))}
           </ul>
           <a href={movie.url}>Watch this movie-YTS.MX</a>
