@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import LoadingBox from "../components/Loading";
+import styles from "./Detail.module.css";
 
 function Detail() {
   const [movie, setMovie] = useState();
@@ -18,28 +19,38 @@ function Detail() {
   useEffect(() => {
     getMovie();
   }, [getMovie]);
-
   return (
-    <div>
+    <div className={styles.detail}>
       {loading ? (
         <LoadingBox />
       ) : (
-        <div>
-          <Link to="/">
-            <button>Go back</button>
-          </Link>
-          <img src={movie.medium_cover_image} alt="" />
-          <h1>{movie.title_long}</h1>
-          <p>{movie.description_full}</p>
-          <h3>Rating: {movie.rating}/10</h3>
-          <h3>Runtime:{movie.runtime} min</h3>
-          <ul>
-            <h3>Genres</h3>
-            {movie.genres.map((g) => (
-              <li key={g}>{g}</li>
-            ))}
-          </ul>
-          <a href={movie.url}>Watch this movie-YTS.MX</a>
+        <div className={styles.movie}>
+          <img
+            className={styles.movie__img}
+            src={movie.large_cover_image}
+            alt=""
+          />
+          <div>
+            <h1 className={styles.movie__title}>{movie.title_long}</h1>
+            <ul className={styles.movie__genres}>
+              {movie.genres.map((g) => (
+                <li key={g}>{g}</li>
+              ))}
+            </ul>
+            <p className={styles.movie__summary}>{movie.description_full}</p>
+            <h3 className={styles.movie__rating}>
+              Rating: <strong>{movie.rating}</strong>/10
+            </h3>
+            <h3 className={styles.movie__runtime}>
+              Runtime: <strong>{movie.runtime}</strong> min
+            </h3>
+            <a className={styles.movie__link} href={movie.url}>
+              Watch this movie -> YTS.MX
+            </a>
+            <Link to="/">
+              <button className={styles.movie__button}>Go back</button>
+            </Link>
+          </div>
         </div>
       )}
     </div>
