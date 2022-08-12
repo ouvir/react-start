@@ -45,7 +45,7 @@ function Detail() {
               Runtime: <strong>{movie.runtime}</strong> min
             </h3>
             <a className={styles.movie__link} href={movie.url}>
-              Watch this movie -> YTS.MX
+              Watch this movie → YTS.MX
             </a>
             <Link to="/">
               <button className={styles.movie__button}>Go back</button>
