@@ -1,7 +1,7 @@
 .movie {
   background-color: var(--color-white);
   width: 400px;
-  height: 180px;
+  height: 200px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -11,7 +11,7 @@
   position: relative;
 }
 .movie__info {
-  width: 230px;
+  width: 220px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,7 @@
 }
 
 .movie__img {
-  width: 170px;
+  width: 180px;
   height: auto;
   position: absolute;
   left: 0;
